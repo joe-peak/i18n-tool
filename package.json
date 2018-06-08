@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "write": "node writeFile.js /Users/keruyun_joe/workspace/node/NodeExcel/merchandise/public/lang",
-    "excel": "node toExcel.js /Users/keruyun_joe/workspace/gitlab/merchandise/src"
+    "write": "node writeFile.js /Users/keruyun_joe/workspace/github/merchandis-i18n/public/lang",
+    "excel": "node toExcel.js /Users/keruyun_joe/workspace/github/merchandis-i18n/src"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
