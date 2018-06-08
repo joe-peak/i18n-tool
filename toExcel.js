@@ -2,6 +2,7 @@ const xlsx = require('xlsx');
 const fs = require('fs');
 const pathFunc = require('path');
 const dirpath = process.argv.slice(2)[0];
+const existedLangMsgMap = require('./existMsgLang.js');
 let countArr = [];
 
 const getMsgFilesInfo = path => {
@@ -48,16 +49,16 @@ const readContent = file => new Promise((resolve, reject) => {
                 const jsonStr = regx.exec(data.toString());
                 // 将字符串转换为js对象
                 const json = eval("("+jsonStr[1]+")");
-                console.log(file['url'])
-                console.log(jsonStr[1]);
+                // console.log(file['url'])
+                // console.log(jsonStr[1]);
                 const f = [];
                 // 组装Excel数据结构
                 for(i in json) {
                     f.push({    
                             key: json[i]['id'],
                             中文: json[i]['defaultMessage'],
-                            英文: '',
-                            繁体: '' 
+                            英文: existedLangMsgMap['en'][json[i]['id']] ? existedLangMsgMap['en'][json[i]['id']] : '',
+                            繁体: existedLangMsgMap['zh-TW'][json[i]['id']] ? existedLangMsgMap['zh-TW'][json[i]['id']] : '',
                         }
                     );
                 }
@@ -147,6 +148,6 @@ setTimeout(() => {
         });
         
         // 导出 Excel
-        xlsx.writeFile(wb, 'hahaha.kry_messages.xlsx');
+        xlsx.writeFile(wb, 'lalala.kry_messages.xlsx');
     });
 }, 300);
