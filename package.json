@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "write": "node writeFile.js /Users/keruyun_joe/workspace/node/NodeExcel/merchandise/public/lang",
+    "excel": "node toExcel_Backup.js /Users/keruyun_joe/workspace/gitlab/merchandise/src"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "xlsx": "^0.12.7"
+  }
+}
